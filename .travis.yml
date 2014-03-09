@@ -10,7 +10,7 @@ before_script:
   # - npm install --quiet
   # - node server.js &
   # - sleep 3 # give server some time to start
-  # - cd ../client
-  # - npm install --quiet
+  cd client
+  - npm install --quiet
 
 script: grunt
