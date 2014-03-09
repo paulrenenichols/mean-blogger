@@ -4,8 +4,8 @@ basePath = '../..';
 // list of files / patterns to load in the browser
 files = [
   JASMINE,
-  JASMINE_ADAPTER
-//  'vendor/angular/angular.js',
+  JASMINE_ADAPTER,
+  'vendor/angular/angular.js'
 //  'vendor/angular/angular-*.js',
 //  'vendor/angular-ui/**/*.js',
 //  'src/**/*.js'
@@ -30,7 +30,7 @@ colors = true;
 
 // level of logging
 // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-logLevel = LOG_INFO;
+logLevel = LOG_DEBUG;
 
 // enable / disable watching file and executing tests whenever any file changes
 autoWatch = false;
