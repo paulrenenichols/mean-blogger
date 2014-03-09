@@ -6,12 +6,8 @@ files = [
   JASMINE,
   JASMINE_ADAPTER,
   'vendor/angular/angular.js',
-  'vendor/angular/angular-route.js',
-  'test/vendor/angular/angular-mocks.js',
   'vendor/angular-ui/**/*.js',
-  'src/**/*.js',
-  'test/unit/**/*.spec.js',
-  'dist/templates/**/*.js'
+  'src/**/*.js'
 ];
 
 // use dots reporter, as travis terminal does not support escaping sequences
