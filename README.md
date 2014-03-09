@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/paulrenenichols/mean-blogger.png)](https://travis-ci.org/paulrenenichols/mean-blogger)
+
 # mean-blogger
 
 **Blogging software written on the MEAN stack**
