@@ -40,7 +40,8 @@ module.exports = function (grunt) {
         js: ['src/**/*.js'],
         html: ['src/index.html'],
         sass: ['src/sass/main.scss'],
-        sassWatch: ['src/sass/**.css']
+        sassWatch: ['src/sass/**.css'],
+        bootstrapSass: ['vendor/bootstrap/**/*.scss']
 
     },
     dest: {
@@ -49,7 +50,8 @@ module.exports = function (grunt) {
     clean: ['<%= distdir %>/*'],
     copy: {
       assets: {
-        files: [{ dest: '<%= distdir %>', src : '**', expand: true, cwd: 'src/assets/' }]
+        files: [{ dest: '<%= distdir %>', src : '**', expand: true, cwd: 'src/assets/' },
+                { dest: '<%= distdir %>/fonts', src : '**', expand: true, cwd: 'vendor/bootstrap/fonts' }]
       }
     },
     karma: {
@@ -95,10 +97,6 @@ module.exports = function (grunt) {
       bootstrap: {
         src:['vendor/angular-ui/bootstrap/*.js'],
         dest: '<%= distdir %>/bootstrap.js'
-      },
-      jquery: {
-        src:['vendor/jquery/*.js'],
-        dest: '<%= distdir %>/jquery.js'
       }
     },
     sass: {
@@ -107,7 +105,8 @@ module.exports = function (grunt) {
                 style: 'expanded'
             },
             files: {
-                '<%= dest.css %>': '<%= src.sass %>'
+                '<%= dest.css %>': '<%= src.sass %>',
+                '<%= distdir %>/bootstrap.css': '<%= src.bootstrapSass %>'
             }
         },
         min: {
@@ -115,7 +114,8 @@ module.exports = function (grunt) {
                 style: 'compressed'
             },
             files: {
-                '<%= dest.css %>': '<% =src.sass %>'
+                '<%= dest.css %>': '<%= src.sass %>',
+                '<%= distdir %>/bootstrap.css': '<%= src.bootstrapSass %>'
             }
         }
     },
