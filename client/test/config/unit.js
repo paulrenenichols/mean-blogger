@@ -5,10 +5,10 @@ basePath = '../..';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'vendor/angular/angular.js'
-//  'vendor/angular/angular-*.js',
-//  'vendor/angular-ui/**/*.js',
-//  'src/**/*.js'
+  'vendor/angular/angular.js',
+  'vendor/angular/angular-*.js',
+  'vendor/angular-ui/**/*.js',
+  'src/**/*.js'
 ];
 
 // use dots reporter, as travis terminal does not support escaping sequences
@@ -30,7 +30,7 @@ colors = true;
 
 // level of logging
 // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-logLevel = LOG_DEBUG;
+logLevel = LOG_INFO;
 
 // enable / disable watching file and executing tests whenever any file changes
 autoWatch = false;
