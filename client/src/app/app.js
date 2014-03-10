@@ -6,7 +6,7 @@ angular.module('meanBlogger', [
       $routeProvider.otherwise({redirectTo:'/'});
     }])
     .controller('MeanBloggerController', function($scope) {
-        $scope.msg = "Hello World";
+        $scope.msg = "Hello World, Paul";
     });
 
 
