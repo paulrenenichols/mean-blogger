@@ -9,7 +9,14 @@ var bodyParser = require('body-parser');
 var routes = require('./routes');
 var users = require('./routes/user');
 
+var passport = require('passport');
+var localStrategy = require('passport-local').Strategy;
+
 var app = express();
+
+var server = http.createServer(app).listen(3000, function() {
+    console.log("Server Started");
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +28,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.session({ secret: 'test secret' }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(app.router);
 
 app.get('/', routes.index);
@@ -54,6 +64,8 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+
 
 
 module.exports = app;

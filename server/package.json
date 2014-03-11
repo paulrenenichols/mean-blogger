@@ -1,7 +1,21 @@
 {
-  "name": "application-name",
+  "author": "Paul Rene Nichols",
+  "name": "mean-blogger",
+  "homepage": "https://github.com/paulrenenichols/mean-blogger",
   "version": "0.0.1",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulrenenichols/mean-blogger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulrenenichols/mean-blogger/issues"
+  },
+  "licenses": [
+    {
+      "type": "BSD",
+      "url": "https://github.com/paulrenenichols/mean-blogger/blob/master/LICENSE"
+    }
+  ],
   "scripts": {
     "start": "node server"
   },
@@ -12,6 +26,18 @@
     "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
-    "jade": "~1.3.0"
+    "jade": "~1.3.0",
+    "passport": "^0.2.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.3",
+    "grunt-mocha-test": "^0.9.4",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-watch": "~0.3.1",
+    "mocha": "^1.17.1",
+    "should": "^3.1.3"
   }
 }
