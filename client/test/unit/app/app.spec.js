@@ -11,9 +11,9 @@ describe('mean-blogger', function() {
 //            expect(locals.$scope.msg).toBeDefined();
 //        }));
 //    });
-    describe('2 plus 2', function() {
-        it('should equal 4', function() {
-            expect(2 + 2).eqeqeq(4);
+    describe('true is true', function() {
+        it('true should be true', function() {
+            expect(true).toBe(true);
         });
     });
 });

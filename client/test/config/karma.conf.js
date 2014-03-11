@@ -15,7 +15,7 @@ module.exports = function(config) {
         ],
 
         // list of files / patterns to load in the browser
-        file: [
+        files: [
           'vendor/angular/angular.js',
           'test/vendor/angular-mocks.js',
           'vendor/angular/angular-*.js',
@@ -24,7 +24,7 @@ module.exports = function(config) {
           'test/**/*.spec.js'
         ],
 
-        exclude: ['**/angular-scenario.js'],
+        exclude: ['**/angular-scenario.js', '**/angular-loader.js'],
 
         // use dots reporter, as travis terminal does not support escaping sequences
         // possible values: 'dots' || 'progress'
