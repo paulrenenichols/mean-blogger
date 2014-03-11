@@ -20,12 +20,6 @@ module.exports = function (grunt) {
     grunt.log.subhead(Date());
   });
 
-  var karmaConfig = function(configFile, customOptions) {
-    var options = { configFile: configFile, keepalive: true };
-    var travisOptions = { browsers: ['Firefox'], reporters: 'dots' };
-    return grunt.util._.extend(options, customOptions, travisOptions);
-  };
-
   // Project configuration.
   grunt.initConfig({
     distdir: 'dist',
@@ -36,7 +30,7 @@ module.exports = function (grunt) {
     ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;\n' +
     ' * Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %>\n */\n',
     src: {
-        js: ['src/**/*.js'],
+        js: ['src/**/*.js', 'test/**/*.spec.js'],
         html: ['src/index.html'],
         sass: ['src/sass/main.scss'],
         sassWatch: ['src/sass/**.css'],
@@ -54,8 +48,16 @@ module.exports = function (grunt) {
       }
     },
     karma: {
-      unit: { options: karmaConfig('test/config/unit.js') },
-      watch: { options: karmaConfig('test/config/unit.js', { singleRun:false, autoWatch: true}) }
+      options: {
+          configFile: 'test/config/karma.conf.js'
+      },
+      unit: {
+          browsers: ['Firefox']
+      },
+      watch: {
+          singleRun: false,
+          autoWatch: true
+      }
     },
     concat:{
       dist:{

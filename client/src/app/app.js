@@ -1,4 +1,4 @@
-angular.module('meanBlogger', [
+angular.module('mean-blogger', [
   'ngRoute'
 ])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
