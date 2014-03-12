@@ -1,4 +1,4 @@
-angular.module('mb.hello-world', ['ui.router'])
+angular.module('mb.helloWorld', ['ui.router'])
     .controller('MBHelloWorldCtrl', function($scope) {
         $scope.msg = "Hello World";
     })

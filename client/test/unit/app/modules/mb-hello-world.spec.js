@@ -2,7 +2,7 @@ describe('mb hello world module', function() {
     var $scope;
     var locals;
 
-    beforeEach(module('mb.hello-world'));
+    beforeEach(module('mb.helloWorld'));
     beforeEach(inject(function($rootScope) {
         $scope = $rootScope.$new();
         $scope.$stateParams = {};
