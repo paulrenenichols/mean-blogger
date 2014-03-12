@@ -1,6 +1,6 @@
-angular.module('mb-main', [
-    'mb-navigation',
-    'mb-hello-world'
+angular.module('mb', [
+    'mb.navigation',
+    'mb.hello-world'
 ]);
 
 
