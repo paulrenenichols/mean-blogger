@@ -30,7 +30,7 @@ module.exports = function (grunt) {
     ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;\n' +
     ' * Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %>\n */\n',
     src: {
-        mb: ['src/app/mb-main.js', 'src/app/modules/*.js'],
+        mb: ['src/app/mb.main.js', 'src/app/modules/*.js'],
         test: ['test/**/*.spec.js'],
         html: ['src/index.html'],
         sass: ['src/sass/main.scss'],
