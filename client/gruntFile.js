@@ -123,11 +123,11 @@ module.exports = function (grunt) {
     },
     watch:{
       all: {
-        files:['<%= src.js %>', '<%= src.html %>', '<%= src.sassWatch %>'],
+        files:['<%= src.mb %>', '<%= src.test %>', '<%= src.html %>', '<%= src.sassWatch %>'],
         tasks:['default','timestamp']
       },
       build: {
-        files:['<%= src.js %>', '<%= src.html %>', '<%= src.sassWatch %>'],
+        files:['<%= src.mb %>', '<%= src.test %>', '<%= src.html %>', '<%= src.sassWatch %>'],
         tasks:['build','timestamp']
       }
     },

@@ -1,3 +1,6 @@
-angular.module('mb.navigation', ['ui.router'])
-    .controller('MBNavigationCtrl', function($scope, $stateProvider) {
+angular.module('mb.navigation', ['ui.router', 'mb.hello-world'])
+    .provider('navigationService', function($stateProvider) {
+        return {
+            $get: function() {}
+        };
     });
