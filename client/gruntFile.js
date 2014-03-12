@@ -30,7 +30,8 @@ module.exports = function (grunt) {
     ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;\n' +
     ' * Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %>\n */\n',
     src: {
-        js: ['src/**/*.js', 'test/**/*.spec.js'],
+        mb: ['src/app/mb-main.js', 'src/app/modules/*.js'],
+        test: ['test/**/*.spec.js'],
         html: ['src/index.html'],
         sass: ['src/sass/main.scss'],
         sassWatch: ['src/sass/**.css'],
@@ -64,7 +65,7 @@ module.exports = function (grunt) {
         options: {
           banner: "<%= banner %>"
         },
-        src:['<%= src.js %>'],
+        src:['<%= src.mb %>'],
         dest:'<%= distdir %>/<%= pkg.name %>.js'
       },
       index: {
@@ -131,7 +132,7 @@ module.exports = function (grunt) {
       }
     },
     jshint:{
-      files:['gruntFile.js', '<%= src.js %>'],
+      files:['gruntFile.js', '<%= src.mb %>', '<%= src.test %>'],
       options:{
         curly:true,
         eqeqeq:true,
