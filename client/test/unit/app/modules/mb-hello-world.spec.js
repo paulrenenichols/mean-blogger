@@ -10,6 +10,13 @@ describe('mb hello world module', function() {
             $controller('MBHelloWorldCtrl', locals);
             expect(locals.$scope.msg).toBeDefined();
         }));
+        it('should set $scope.msg to "Hello World"', inject(function($controller, $rootScope) {
+            var locals = {
+                $scope: $rootScope.$new()
+            };
+            $controller('MBHelloWorldCtrl', locals);
+            expect(locals.$scope.msg).toBe("Hello World");
+        }));
     });
 
 });
