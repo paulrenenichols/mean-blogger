@@ -16,6 +16,7 @@ var app = express();
 
 var server = http.createServer(app).listen(3000, function() {
     console.log("Server Started");
+    console.log(process.cwd());
 });
 
 // view engine setup
