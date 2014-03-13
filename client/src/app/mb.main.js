@@ -1,6 +1,6 @@
 angular.module('mb', [
     'mb.navigation',
-    'mb.hello-world',
+    'mb.helloWorld',
     'ui.router'
 ])
     .run(['$rootScope', '$state', '$stateParams',
