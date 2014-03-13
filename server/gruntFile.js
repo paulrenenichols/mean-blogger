@@ -10,6 +10,16 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    distdir: 'dist',
+    clean: ['<%= distdir %>/*'],
+    copy: {
+        server: {
+            files: [{ dest: '<%= distdir %>/', src : 'server.js' },
+                    { dest: '<%= distdir %>/node_modules', src : '**', cwd: 'node_modules/', expand: true },
+                    { dest: '<%= distdir %>/routes', src : '**', cwd: 'routes/', expand: true },
+                    { dest: '<%= distdir %>/middleware', src : '**', cwd: 'middleware/', expand: true }]
+        }
+    },
     mochaTest: {
         test: {
             options: {
@@ -37,6 +47,7 @@ module.exports = function(grunt) {
         eqnull: true,
         globals: {
             require: false,
+            process: false,
             __dirname: false,
             console: false,
             module: false,
@@ -51,7 +62,8 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint','mochaTest:test']);
+  grunt.registerTask('default', ['jshint','mochaTest:test', 'build']);
+  grunt.registerTask('build', ['clean', 'copy:server']);
 
   grunt.registerTask('timestamp', function() {
     grunt.log.subhead(Date());
